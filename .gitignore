@@ -1,0 +1,7 @@
+config.ini
+lib/
+include/
+share/
+etc/
+bin/
+__pycache__/

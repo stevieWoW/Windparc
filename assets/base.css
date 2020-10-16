@@ -1,0 +1,91 @@
+/* Load Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&family=Sigmar+One&display=swap');
+
+
+/* General*/
+html{ width: 100%; height: 100%; position: relative;}
+body{ background: rgb(17, 17, 17); height:100%; position: relative; }
+.rc-slider-rail{background-color: rgb(70, 70, 70);}
+.rc-slider-dot-active{background-color: rgb(0, 217, 255);}
+.rc-slider-track{background-color: rgb(53, 101, 156);}
+.has-value.Select--single>.Select-control .Select-value .Select-value-label,
+.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label{color:#888;}
+.Select-menu-outer{color:#999; background-color:black;}
+#h1graph,#graphhr{display:block;margin-top:8%;}
+
+#logo{
+  width:100px;
+  height:inherit;
+}
+
+h1{
+  font-family: 'Merriweather', serif;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+  margin-bottom: 3px;
+}
+
+.windmill-1{ display:none;}
+
+.sidenav{width: 94%;}
+
+@media only screen and (min-width: 1280px) {
+  
+  .col-1 {width: 9.4185%; float: left; margin:0px 0px 10px 10px;}
+  .col-2 {width: 19.4185%; float: left; margin:0px 0px 10px 10px;}
+  .col-3 {width: 29.4185%; float: left; margin:0px 0px 10px 10px;}
+  .col-4 {width: 39.4185%;float: left; margin:0px 0px 10px 10px;}
+  .col-5 {width: 49.4185%; float: left; margin:0px 0px 10px 10px;}
+  .col-6 {width: 59.4185%;float: left; margin:0px 0px 10px 10px;}
+  .col-7 {width: 69.4185%;float: left; margin:0px 0px 10px 10px;}
+  .col-8 {width: 79.4185%;float: left; margin:0px 0px 10px 10px;}
+  .col-9 {width: 89.4185%;float: left; margin:0px 0px 10px 10px;}
+  .col-10 {width: 99.4185%;float: left; margin:0px 0px 10px 10px;}
+
+  .bradius-1 {border-radius: 1px;}
+  .bradius-2 {border-radius: 2px;}
+  .bradius-3 {border-radius: 3px;}
+  .bradius-4 {border-radius: 4px;}
+  .bradius-5 {border-radius: 5px;}
+  .bradius-6 {border-radius: 6px;}
+  .bradius-7 {border-radius: 7px;}
+  .bradius-8 {border-radius: 8px;}
+  .bradius-9 {border-radius: 9px;}
+  .bradius-10 {border-radius: 10px;}
+  .bradius-11 {border-radius: 11px;}
+  .bradius-12 {border-radius: 12px;}
+
+  .placeholdergraph{
+		min-height: 400px;
+		overflow:hidden;
+  }
+  
+  /* For desktop: */
+  #sidemenu{margin-right:1%;}
+  .sidenav {position: relative; height:100%; top: 0px; background-color: rgb(30,30,30); overflow-x: hidden; bottom: 0; width: 20%; float: left; margin:0px 0px 10px 10px;}
+  .sidenav-right { right:0px; }
+  #graphcontainer{ width:68%; float:left; }
+  #h1graph,#graphhr{display:none}
+  #invest-div input {margin:10px}
+
+  .windmill-1{
+    display: inline;
+    position: absolute;
+    top:0px;
+    left:10%;
+    width:235px;
+  }
+
+
+}
+
+
+
+
+
+
+
+
