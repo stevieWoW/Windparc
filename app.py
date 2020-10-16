@@ -394,7 +394,7 @@ def UpdatePerformance(n_clicks,aggregation,location,checkboxyear,checkboxmonth,r
     logging.debug("where: {0}".format(where))
 
 
-    ########### some test #########################
+    ########### include prediction #########################
     #check if current year was picked in year slider.
     #check if picked month are those not reached yet or current one
     # month in year not reached yet
@@ -443,19 +443,21 @@ def UpdatePerformance(n_clicks,aggregation,location,checkboxyear,checkboxmonth,r
         elif aggregation == 'WINDMILL':
             headerprediction=["Prediction,"]*len(predictionvalue)
             
+        #return data with predicition
         data = [
             {'x': df[aggregation], 'y': df['_PLAN'],'z':df['_IS'], 'type': 'bar','text':header, 'name': 'Plan', 'marker':{'color':design['colors']['BarPlan']},'hovertemplate':"<extra></extra><b>%{text} </b> <br>PLAN: %{y} kWh", 'hoverinfo':'y'},
             {'x': df[aggregation], 'y': df['_IS'], 'type': 'bar','text':header, 'name': 'Is', 'marker':{'color':design['colors']['BarIs']},'hovertemplate':"<extra></extra><b>%{text} </b> <br>IS: %{y} kWh", 'hoverinfo':'y'},
             {'x': predictionvalue[aggregation], 'y': predictionvalue['_IS'], 'type': 'scatter','text':headerprediction, 'name': 'Prediction', 'marker':{'color':'rgb(255,0,127)'},'hovertemplate':"<extra></extra><b>%{text} </b> <br>IS: %{y} kWh", 'hoverinfo':'y'}
          ]
     else:
+        # return data without prediction
         data = [
             {'x': df[aggregation], 'y': df['_PLAN'],'z':df['_IS'], 'type': 'bar','text':header, 'name': 'Plan', 'marker':{'color':design['colors']['BarPlan']},'hovertemplate':"<extra></extra><b>%{text} </b> <br>PLAN: %{y} kWh", 'hoverinfo':'y'},
             {'x': df[aggregation], 'y': df['_IS'], 'type': 'bar','text':header, 'name': 'Is', 'marker':{'color':design['colors']['BarIs']},'hovertemplate':"<extra></extra><b>%{text} </b> <br>IS: %{y} kWh", 'hoverinfo':'y'},
         ]
     
 
-    ################### end test #####################
+    ################### end prediction #####################
 
     #######PIE CHART IN GRAPH5######
     dfwindmill = dash_function.dash_function.ExecuteQuery(

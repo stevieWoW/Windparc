@@ -29,7 +29,6 @@ class dash_function:
 		            return 1
 
 	##################################################
-	#psql.read_sql("select WEP.PLANPERFORMANCE, WEP.ISPERFORMANCE,WEP.WINDMILL, WEP.MONTH from Metabase.WIND_ENERGY_PERFORMANCE WEP where WINDMILL in (1) and YEAR in (" + yearvalue + ") order by MONTH;",dash_function.dash_function.DatabaseAccess())
 	def GetLabel(query):
 		logging.debug("GetLabelQuery:{0}".format(query))
 		df = psql.read_sql(query,dash_function.DatabaseAccess())
