@@ -3,9 +3,6 @@ import MySQLdb
 import pandas.io.sql as psql
 import datetime
 import configparser
-import pandas as pd
-import numpy as np
-import dash_daq as daq
 
 class dash_function:
 	##################################################
