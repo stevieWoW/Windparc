@@ -432,17 +432,17 @@ def UpdatePerformance(n_clicks,aggregation,location,checkboxyear,checkboxmonth,r
         else:
             prediction = False
             monthtopredict=None
-
+    
+    #set headers for prediction
     if prediction:
+        predictionvalue = dash_function.dash_function.GetMedian(df.copy(),aggregation,mill,monthtopredict)
         if aggregation == 'YEAR':
             headerprediction=["Prediction"]
         elif aggregation == 'MONTH':
             headerprediction=["Prediction"]*len(monthtopredict)
         elif aggregation == 'WINDMILL':
-            headerprediction=["Prediction,"]
-
-        predictionvalue = dash_function.dash_function.GetMedian(df.copy(),aggregation,mill,monthtopredict)
-        print(headerprediction)
+            headerprediction=["Prediction,"]*len(predictionvalue)
+            
         data = [
             {'x': df[aggregation], 'y': df['_PLAN'],'z':df['_IS'], 'type': 'bar','text':header, 'name': 'Plan', 'marker':{'color':design['colors']['BarPlan']},'hovertemplate':"<extra></extra><b>%{text} </b> <br>PLAN: %{y} kWh", 'hoverinfo':'y'},
             {'x': df[aggregation], 'y': df['_IS'], 'type': 'bar','text':header, 'name': 'Is', 'marker':{'color':design['colors']['BarIs']},'hovertemplate':"<extra></extra><b>%{text} </b> <br>IS: %{y} kWh", 'hoverinfo':'y'},

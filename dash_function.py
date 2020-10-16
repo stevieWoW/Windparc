@@ -228,8 +228,12 @@ class dash_function:
 
 		elif aggregation == "WINDMILL":
 			#get the median by month,windmill
-			print(dfpred)
 			dfmedian = dfpred[['MONTH','_IS','WINDMILL']].groupby(['MONTH','WINDMILL']).median()
 			logging.debug("median per month,windmill: {0}".format(dfmedian))
-			logging.debug("df month in between: {0}".format(df[['MONTH','_IS','WINDMILL']][df['MONTH'].between(monthtopredict[:1][0],monthtopredict[-1:][0])].set_index('MONTH').fillna(0)))
+			logging.debug("df windmill(produced): {0}".format(df[['WINDMILL','_IS']].set_index('WINDMILL').fillna(0)))
+			#sum produced values with predicted
+			dfwindmill = dfmedian.groupby(['WINDMILL']).sum() + df[['WINDMILL','_IS']].set_index('WINDMILL').fillna(0)
+			logging.debug("windmill prediction: {0}".format(dfwindmill.reset_index()))
+
+			return dfwindmill.reset_index()
 		
